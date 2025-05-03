@@ -2,48 +2,38 @@ name: Update Zalando Postgres Charts
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # todos los días a las 03:00 UTC
-  workflow_dispatch:     # permite lanzarlo manualmente
+    - cron: '0 3 * * *'  # Todos los días a las 03:00 UTC
+  workflow_dispatch:      # Permite ejecución manual
 
 jobs:
-  update-charts:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Necesario para hacer push a gh-pages
 
     steps:
-      - name: Checkout this repo
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Set up Helm
         uses: azure/setup-helm@v3
         with:
-          version: v3.12.3
+          version: v3.13.3
 
-      - name: Clone Zalando Postgres Operator
+      - name: Clone Zalando Postgres Operator repo
         run: |
           git clone --depth 1 https://github.com/zalando/postgres-operator.git /tmp/postgres-operator
 
-      - name: Package postgres-operator chart
+      - name: Package both Zalando charts
         run: |
-          mkdir -p charts
-          helm package /tmp/postgres-operator/charts/postgres-operator -d charts
+          mkdir -p .deploy
+          helm package /tmp/postgres-operator/charts/postgres-operator -d .deploy
+          helm package /tmp/postgres-operator/charts/postgres-operator-ui -d .deploy
+          helm repo index .deploy --url https://llamaliticaAI.github.io/helm-charts
 
-      - name: Package postgres-operator-ui chart
-        run: |
-          helm package /tmp/postgres-operator/charts/postgres-operator-ui -d charts
-
-      - name: Rebuild Helm index.yaml
-        run: |
-          helm repo index charts --url https://<tu_usuario>.github.io/<tu_repo>/charts
-
-      - name: Commit changes
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add charts/
-          git commit -m "Update Zalando charts [automated]" || echo "No changes to commit"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main  # o gh-pages, si es donde publicas
+          publish_dir: .deploy
+          publish_branch: gh-pages
