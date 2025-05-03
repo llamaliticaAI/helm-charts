@@ -10,11 +10,18 @@ jobs:
       contents: write
 
     steps:
+      # Checkout gh-pages (para publicar)
       - name: Checkout gh-pages branch
         uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: gh-pages
+
+      # Checkout main branch (donde está el chart)
+      - name: Checkout main branch (chart source)
+        uses: actions/checkout@v3
+        with:
+          path: source
 
       - name: Set up Helm
         uses: azure/setup-helm@v3
@@ -28,7 +35,7 @@ jobs:
 
       - name: Package LetsEncrypt Issuer chart
         run: |
-          helm package charts/letsencrypt-issuer --destination gh-pages
+          helm package source/charts/letsencrypt-issuer --destination gh-pages
           helm repo index gh-pages --url https://llamaliticaAI.github.io/helm-charts --merge gh-pages/index.yaml
 
       - name: Commit and push
