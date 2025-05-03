@@ -3,9 +3,9 @@ entries:
   letsencrypt-issuer:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-05-03T05:20:04.759253806Z"
+    created: "2025-05-03T05:24:34.343695791Z"
     description: A Helm chart to create the ClusterIssuer for Certificate Manager
-    digest: a796a32a056c4849ed90928a748e49f66b3c557228759a1894d191cf0f424b75
+    digest: 8276ddf5f8dbff542a49a55d05f4b0548dd5934c6a46bfc23de12b900b5c2d3f
     name: letsencrypt-issuer
     type: application
     urls:
@@ -58,4 +58,4 @@ entries:
     urls:
     - https://llamaliticaAI.github.io/helm-charts/postgres-operator-ui-1.14.0.tgz
     version: 1.14.0
-generated: "2025-05-03T05:20:04.758893113Z"
+generated: "2025-05-03T05:24:34.343331716Z"
