@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  letsencrypt-issuer:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-05-03T01:34:24.782424434Z"
+    description: A Helm chart to create the ClusterIssuer for Certificate Manager
+    digest: 835e3acef33d3e0a1cf5d3a5867194f8a6adc1deb1d2bce0fe95eaece1f27887
+    name: letsencrypt-issuer
+    type: application
+    urls:
+    - https://llamaliticaAI.github.io/infrastructure/letsencrypt-issuer-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-03T01:34:24.782078431Z"
