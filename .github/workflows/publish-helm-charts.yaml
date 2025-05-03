@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p .deploy
           helm package charts/letsencrypt-issuer --destination .deploy
-          helm repo index .deploy --url https://llamaliticaAI.github.io/infrastructure
+          helm repo index .deploy --url https://llamaliticaAI.github.io/helm-charts
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
