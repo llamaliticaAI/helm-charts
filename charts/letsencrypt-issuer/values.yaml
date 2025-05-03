@@ -1,0 +1,26 @@
+# create the staging Let's Encrypt staging ClusterIssuer
+createStaging: true
+createProduction: true
+createDNS: true
+
+# configure the ACME settings
+acme:
+  # email address of the account
+  email:
+  # the prefix for the secret to use, the last pasrt will be "production" or "staging" respectively
+  # for production and staging Issuers
+  secretNamePrefix: "letsencrypt-issuer"
+  # configure the solvers for the Issuer
+  solvers:
+  - http01:
+      ingress:
+        class: "nginx"
+  # you can optionally add DNS-01 solver for Route53
+  - dns01:
+      route53:
+        region: your-aws-region
+        hostedZoneID: your-hosted-zone-id
+        accessKeyID: your-aws-access-key-id
+        secretAccessKeySecretRef:
+          name: route53-secret
+          key: secret-access-key
