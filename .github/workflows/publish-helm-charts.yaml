@@ -18,11 +18,18 @@ jobs:
         with:
           version: v3.13.3
 
-      - name: Package letsencrypt-issuer chart
+      - name: Restore existing .tgz files from gh-pages
         run: |
           mkdir -p .deploy
-          helm package charts/letsencrypt-issuer --destination .deploy
           curl -sfL https://llamaliticaAI.github.io/helm-charts/index.yaml -o .deploy/index-old.yaml || true
+          grep 'https://llamaliticaAI.github.io/helm-charts/.*\.tgz' .deploy/index-old.yaml | cut -d ' ' -f2 | while read url; do
+            fname=$(basename "$url")
+            curl -sfL "$url" -o ".deploy/$fname" || echo "Warning: $fname not found"
+          done
+
+      - name: Package letsencrypt-issuer chart
+        run: |
+          helm package charts/letsencrypt-issuer --destination .deploy
           helm repo index .deploy --url https://llamaliticaAI.github.io/helm-charts --merge .deploy/index-old.yaml
 
       - name: Publish to GitHub Pages
