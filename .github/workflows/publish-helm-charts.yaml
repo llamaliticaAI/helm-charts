@@ -1,16 +1,16 @@
-name: Publish Helm Chart to GitHub Pages
+name: Publish LetsEncrypt Issuer Chart
 
 on:
-  workflow_dispatch:  # Solo se ejecuta cuando la lanzas manualmente desde la UI
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Necesario para hacer push a gh-pages
+      contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Set up Helm
@@ -18,11 +18,12 @@ jobs:
         with:
           version: v3.13.3
 
-      - name: Package Helm chart Lestencrypt Issuer
+      - name: Package letsencrypt-issuer chart
         run: |
           mkdir -p .deploy
           helm package charts/letsencrypt-issuer --destination .deploy
-          helm repo index .deploy --url https://llamaliticaAI.github.io/helm-charts
+          curl -sfL https://llamaliticaAI.github.io/helm-charts/index.yaml -o .deploy/index-old.yaml || true
+          helm repo index .deploy --url https://llamaliticaAI.github.io/helm-charts --merge .deploy/index-old.yaml
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

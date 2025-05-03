@@ -2,14 +2,14 @@ name: Update Zalando Postgres Charts
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # Todos los días a las 03:00 UTC
-  workflow_dispatch:      # Permite ejecución manual
+    - cron: '0 3 * * *'  # todos los días a las 03:00 UTC
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Necesario para hacer push a gh-pages
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -20,16 +20,17 @@ jobs:
         with:
           version: v3.13.3
 
-      - name: Clone Zalando Postgres Operator repo
+      - name: Clone Zalando Postgres Operator
         run: |
           git clone --depth 1 https://github.com/zalando/postgres-operator.git /tmp/postgres-operator
 
-      - name: Package both Zalando charts
+      - name: Package charts
         run: |
           mkdir -p .deploy
           helm package /tmp/postgres-operator/charts/postgres-operator -d .deploy
           helm package /tmp/postgres-operator/charts/postgres-operator-ui -d .deploy
-          helm repo index .deploy --url https://llamaliticaAI.github.io/helm-charts
+          curl -sfL https://llamaliticaAI.github.io/helm-charts/index.yaml -o .deploy/index-old.yaml || true
+          helm repo index .deploy --url https://llamaliticaAI.github.io/helm-charts --merge .deploy/index-old.yaml
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
