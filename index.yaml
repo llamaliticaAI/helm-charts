@@ -3,7 +3,7 @@ entries:
   letsencrypt-issuer:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-14T03:30:45.765853486Z"
+    created: "2025-10-15T03:34:33.415242466Z"
     description: A Helm chart to create the ClusterIssuer for Certificate Manager
     digest: d63c957452ac5af1b890e30a4c6eb1363d8d95e8d836a7b01478b7520dcbfa34
     name: letsencrypt-issuer
@@ -14,10 +14,10 @@ entries:
   postgres-operator:
   - apiVersion: v2
     appVersion: 1.14.0
-    created: "2025-10-14T03:30:45.768428986Z"
+    created: "2025-10-15T03:34:33.418019701Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
-    digest: 8b9552279ca152b50a46c0c51c6717e5183b9557b6548685301b749d767c26e0
+    digest: bbf8cd41317df2c4bb482d6ded3e403e9a794f6c123763391874af7a56b80eaf
     home: https://github.com/zalando/postgres-operator
     keywords:
     - postgres
@@ -37,10 +37,10 @@ entries:
   postgres-operator-ui:
   - apiVersion: v2
     appVersion: 1.14.0
-    created: "2025-10-14T03:30:45.769325384Z"
+    created: "2025-10-15T03:34:33.419003964Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
-    digest: 8ef03319665a065bc5d7a5dd1774883c7a202a4125c60ffc660ce01d83dbed0b
+    digest: 8cc67d1666cac9b8f154d12bf04bf543dab5583e0471ed248845f18e544a2f44
     home: https://github.com/zalando/postgres-operator
     keywords:
     - postgres
@@ -58,4 +58,4 @@ entries:
     urls:
     - https://llamaliticaAI.github.io/helm-charts/postgres-operator-ui-1.14.0.tgz
     version: 1.14.0
-generated: "2025-10-14T03:30:45.765418642Z"
+generated: "2025-10-15T03:34:33.414485119Z"
