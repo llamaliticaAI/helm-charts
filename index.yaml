@@ -3,7 +3,7 @@ entries:
   letsencrypt-issuer:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-11-20T03:41:01.241723138Z"
+    created: "2025-11-21T03:40:49.316629508Z"
     description: A Helm chart to create the ClusterIssuer for Certificate Manager
     digest: d63c957452ac5af1b890e30a4c6eb1363d8d95e8d836a7b01478b7520dcbfa34
     name: letsencrypt-issuer
@@ -14,10 +14,10 @@ entries:
   postgres-operator:
   - apiVersion: v2
     appVersion: 1.15.0
-    created: "2025-11-20T03:41:01.248846115Z"
+    created: "2025-11-21T03:40:49.321793359Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
-    digest: 2643af9eb9a816016770bd22dd59413e33378d1d1bfd540e4731a09e9c9b92c2
+    digest: e23f6a427e889a292185b85279c30ea5bc5386e6305dcb0f9d29b52a53a2986f
     home: https://github.com/zalando/postgres-operator
     keywords:
     - postgres
@@ -36,7 +36,7 @@ entries:
     version: 1.15.0
   - apiVersion: v2
     appVersion: 1.14.0
-    created: "2025-11-20T03:41:01.245976119Z"
+    created: "2025-11-21T03:40:49.319186607Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
     digest: 210a11919a89ebc71bfd9fe78e59c1007ab60c07850466acb1006a92343037de
@@ -59,10 +59,10 @@ entries:
   postgres-operator-ui:
   - apiVersion: v2
     appVersion: 1.15.0
-    created: "2025-11-20T03:41:01.250610864Z"
+    created: "2025-11-21T03:40:49.324956466Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
-    digest: c0754b550c4f0865b0f8534c9e7c895eadbb484968ef455e1fc9d23dcf1e0ac2
+    digest: 3f36a6026ad83825d3cd607c2fee0a0b0a1eee2b0cd52517bafd7057d173c65c
     home: https://github.com/zalando/postgres-operator
     keywords:
     - postgres
@@ -82,7 +82,7 @@ entries:
     version: 1.15.0
   - apiVersion: v2
     appVersion: 1.14.0
-    created: "2025-11-20T03:41:01.249746217Z"
+    created: "2025-11-21T03:40:49.323211765Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: 2dd00c25215210541ef12d3a7915b340390ee94aa9d35a59bed4abe6b4b92d18
@@ -103,4 +103,4 @@ entries:
     urls:
     - https://llamaliticaAI.github.io/helm-charts/postgres-operator-ui-1.14.0.tgz
     version: 1.14.0
-generated: "2025-11-20T03:41:01.241279569Z"
+generated: "2025-11-21T03:40:49.31626201Z"
