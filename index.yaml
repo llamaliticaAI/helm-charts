@@ -3,7 +3,7 @@ entries:
   letsencrypt-issuer:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-01-12T04:08:00.690112768Z"
+    created: "2026-01-13T04:00:46.751235203Z"
     description: A Helm chart to create the ClusterIssuer for Certificate Manager
     digest: d63c957452ac5af1b890e30a4c6eb1363d8d95e8d836a7b01478b7520dcbfa34
     name: letsencrypt-issuer
@@ -14,10 +14,10 @@ entries:
   postgres-operator:
   - apiVersion: v2
     appVersion: 1.15.1
-    created: "2026-01-12T04:08:00.698304776Z"
+    created: "2026-01-13T04:00:46.76376232Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
-    digest: 52ae66f500eb6ef95b1f302e61091f842cba8b5091a751ad7fded56deac5793a
+    digest: 6ee4a922580b77600cfd7727beccaa8e25c41503a0c7c9e731654c92973bc3a5
     home: https://github.com/zalando/postgres-operator
     keywords:
     - postgres
@@ -36,7 +36,7 @@ entries:
     version: 1.15.1
   - apiVersion: v2
     appVersion: 1.15.0
-    created: "2026-01-12T04:08:00.6954866Z"
+    created: "2026-01-13T04:00:46.757111384Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
     digest: 709e4d59238f86edd9ba04556c2c3a349beefd0d5d881d26b48718c81bf3a351
@@ -58,7 +58,7 @@ entries:
     version: 1.15.0
   - apiVersion: v2
     appVersion: 1.14.0
-    created: "2026-01-12T04:08:00.692849943Z"
+    created: "2026-01-13T04:00:46.75440977Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
     digest: 210a11919a89ebc71bfd9fe78e59c1007ab60c07850466acb1006a92343037de
@@ -81,10 +81,10 @@ entries:
   postgres-operator-ui:
   - apiVersion: v2
     appVersion: 1.15.1
-    created: "2026-01-12T04:08:00.70160553Z"
+    created: "2026-01-13T04:00:46.767077349Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
-    digest: 9fa7c9c8cfd0855363eceb606c0974f9b4d0ea84e002043917cfdc8c20b9e4ce
+    digest: c827d7aa070ffcf4f65e104a0bd1d8331d5e5199fa91b3a8296dd13d8c34700a
     home: https://github.com/zalando/postgres-operator
     keywords:
     - postgres
@@ -104,7 +104,7 @@ entries:
     version: 1.15.1
   - apiVersion: v2
     appVersion: 1.15.0
-    created: "2026-01-12T04:08:00.700761205Z"
+    created: "2026-01-13T04:00:46.766194103Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: a1d8c1dd599a6f327bbb107d9df83c7d1a90fa0f80375c90838fa78f702f28a5
@@ -127,7 +127,7 @@ entries:
     version: 1.15.0
   - apiVersion: v2
     appVersion: 1.14.0
-    created: "2026-01-12T04:08:00.699807787Z"
+    created: "2026-01-13T04:00:46.764593147Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: 2dd00c25215210541ef12d3a7915b340390ee94aa9d35a59bed4abe6b4b92d18
@@ -148,4 +148,4 @@ entries:
     urls:
     - https://llamaliticaAI.github.io/helm-charts/postgres-operator-ui-1.14.0.tgz
     version: 1.14.0
-generated: "2026-01-12T04:08:00.689734683Z"
+generated: "2026-01-13T04:00:46.750645016Z"
